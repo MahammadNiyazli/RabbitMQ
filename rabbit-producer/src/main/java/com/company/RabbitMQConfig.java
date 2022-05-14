@@ -46,8 +46,6 @@ public class RabbitMQConfig {
 
     @Bean
     public AmqpTemplate template(ConnectionFactory connectionFactory){
-        System.err.println(connectionFactory.getUsername());
-        System.err.println(connectionFactory.getPort());
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(converter());
         return rabbitTemplate;
